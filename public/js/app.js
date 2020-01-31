@@ -19345,6 +19345,37 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/js/task.js":
+/*!******************************!*\
+  !*** ./resources/js/task.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('.delete').click(function () {
+    var id = $(this).attr('data-id');
+    var url = $(this).attr('data-url');
+    $.ajax({
+      url: url,
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      type: 'delete',
+      dataType: 'json',
+      success: function success(res) {
+        if (res.status) {
+          $('#task-' + id).remove();
+        } else {
+          alert('Errors');
+        }
+      }
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -19357,14 +19388,15 @@ $(document).ready(function () {
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/logout.js ./resources/sass/app.scss ***!
-  \**************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/logout.js ./resources/js/task.js ./resources/sass/app.scss ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/thuongnguyen/Desktop/quick_task/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /home/thuongnguyen/Desktop/quick_task/resources/js/logout.js */"./resources/js/logout.js");
+__webpack_require__(/*! /home/thuongnguyen/Desktop/quick_task/resources/js/task.js */"./resources/js/task.js");
 module.exports = __webpack_require__(/*! /home/thuongnguyen/Desktop/quick_task/resources/sass/app.scss */"./resources/sass/app.scss");
 
 

@@ -1,4 +1,4 @@
-@if (count($errors) > 0)
+@if (count($errors) > Config::get('app.zero'))
     <div class="alert alert-danger">
         <strong>{{ trans('errors.default') }}</strong>
         <br><br>
