@@ -19,3 +19,11 @@ Auth::routes();
 Route::get('home', function(){
    return view('home');
 });
+
+Route::resource('task', 'TaskController', [
+    ['only' => [
+        'index',
+        'store',
+        'destroy',
+    ]]
+]);
