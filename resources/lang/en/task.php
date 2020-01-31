@@ -8,5 +8,9 @@ return [
             'action' => 'Action',
         ],
     ],
+    'destroy' => [
+        'success' => 'Destroy task successfully',
+        'fail' => 'Destroy task failed',
+    ]
 ];
 ?>

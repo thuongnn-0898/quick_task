@@ -36,6 +36,14 @@ class TaskController extends Controller
 
     public function destroy(Task $task)
     {
-
+        $this->authorize('destroy', $task);
+        if($task->delete()){
+            $status = true;
+            $msg = trans('task.destroy.success');
+        }else{
+            $status = false;
+            $msg = trans('task.destroy.fail');
+        }
+        return json_encode(['status' => $status, 'msg' => $msg]);
     }
 }
