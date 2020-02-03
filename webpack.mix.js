@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js([
     'resources/js/app.js',
-    'resources/js/logout.js'
-    ], 'public/js')
+    'resources/js/logout.js',
+    'resources/js/task.js',
+], 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

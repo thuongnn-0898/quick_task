@@ -19365,9 +19365,10 @@ $(document).ready(function () {
       dataType: 'json',
       success: function success(res) {
         if (res.status) {
+          alert(res.msg);
           $('#task-' + id).remove();
         } else {
-          alert('Errors');
+          alert(res.msg);
         }
       }
     });
